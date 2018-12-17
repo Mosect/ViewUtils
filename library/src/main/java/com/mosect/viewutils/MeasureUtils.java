@@ -103,6 +103,12 @@ public final class MeasureUtils {
         }
     }
 
+    /**
+     * 计算视图占用的宽度
+     *
+     * @param view 视图
+     * @return 视图占用的宽度
+     */
     public static int getViewWidthSpace(View view) {
         int width = view.getMeasuredWidth();
         ViewGroup.LayoutParams lp = view.getLayoutParams();
@@ -113,6 +119,12 @@ public final class MeasureUtils {
         return width;
     }
 
+    /**
+     * 计算视图占用的高度
+     *
+     * @param view 视图占用的高度
+     * @return 视图占用的高度
+     */
     public static int getViewHeightSpace(View view) {
         int height = view.getMeasuredHeight();
         ViewGroup.LayoutParams lp = view.getLayoutParams();
@@ -123,6 +135,15 @@ public final class MeasureUtils {
         return height;
     }
 
+    /**
+     * 计算布局所需的值
+     *
+     * @param view      视图
+     * @param layoutX   布局的位置X
+     * @param layoutY   布局的位置Y
+     * @param layoutOut 返回布局的位置
+     * @param spaceOut  返回占用的位置
+     */
     public static void computeLayout(View view, int layoutX, int layoutY, Rect layoutOut, Rect spaceOut) {
         ViewGroup.LayoutParams lp = view.getLayoutParams();
         spaceOut.left = layoutX;
