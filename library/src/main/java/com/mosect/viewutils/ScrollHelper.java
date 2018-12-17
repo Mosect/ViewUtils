@@ -42,7 +42,7 @@ public abstract class ScrollHelper {
             }
 
             case MotionEvent.ACTION_MOVE: {
-                if (gestureHelper.isVerticalGesture() || gestureHelper.isHorizontalGesture()) {
+                if (gestureHelper.isVerticalGesture() || gestureHelper.isHorizontalGesture() && canScroll()) {
                     float rangeX = event.getX() - startTouchX;
                     float rangeY = event.getY() - startTouchY;
                     int dstX = (int) (startScrollX - rangeX);
@@ -73,12 +73,23 @@ public abstract class ScrollHelper {
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_CANCEL: {
                 velocityTracker.computeCurrentVelocity(1000);
-                float xv = velocityTracker.getXVelocity();
-                float yv = velocityTracker.getYVelocity();
-                viewFling(xv, yv);
+                if (canScroll()) {
+                    float xv = velocityTracker.getXVelocity();
+                    float yv = velocityTracker.getYVelocity();
+                    viewFling(xv, yv);
+                }
                 break;
             }
         }
+    }
+
+    /**
+     * 获取手势辅助器
+     *
+     * @return 手势辅助器
+     */
+    public GestureHelper getGestureHelper() {
+        return gestureHelper;
     }
 
     /**
@@ -92,6 +103,15 @@ public abstract class ScrollHelper {
         startTouchY = y;
         startScrollX = getViewScrollX();
         startScrollY = getViewScrollY();
+    }
+
+    /**
+     * 判断是否可以滑动
+     *
+     * @return 是否可以滑动
+     */
+    protected boolean canScroll() {
+        return true;
     }
 
     /**
