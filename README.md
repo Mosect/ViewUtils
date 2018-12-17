@@ -2,10 +2,41 @@
 视图工具类，提供了三个视图辅助器：
 * GestureHelper（手势辅助器）
 * InterceptTouchHelper（拦截辅助器）
-* ScrollHelper（滑动辅助器）
+* ScrollHelper（滑动辅助器）  
 
 此外，还提供了测量工具：
 * MeasureUtils
+
+## 使用
+### Gradle
+还没上传jcenter，审核中，需要先设置仓库：
+```
+allprojects {
+    repositories {
+        maven {
+            url 'https://dl.bintray.com/mosect/android'
+        }
+    }
+}
+```
+然后依赖使用：
+```
+implementation 'com.mosect:ViewUtils:1.0.1'
+```
+如果Gradle版本比较旧
+```
+compile 'com.mosect:ViewUtils:1.0.1'
+```
+
+### Maven
+```
+<dependency>
+  <groupId>com.mosect</groupId>
+  <artifactId>ViewUtils</artifactId>
+  <version>1.0.1</version>
+  <type>pom</type>
+</dependency>
+```
 
 ## GestureHelper
 手势辅助器，主要是判断手势的，可以在View.onTouchEvent方法中使用：\
