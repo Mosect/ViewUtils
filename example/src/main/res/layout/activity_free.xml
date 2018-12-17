@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mosect.viewutils.example.FreeScroll xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingTop="5dp"
+    android:paddingRight="15dp"
+    android:paddingBottom="15dp">
+
+    <View
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:background="#ff0000" />
+
+    <com.mosect.viewutils.example.FreeScroll
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:background="#303030">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:background="#808080" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_margin="50dp"
+            android:background="#dddddd" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="25dp"
+            android:background="#909090" />
+    </com.mosect.viewutils.example.FreeScroll>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
+        android:background="#00ff00" />
+
+    <View
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:background="#0000ff" />
+</com.mosect.viewutils.example.FreeScroll>

@@ -1,0 +1,44 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+publish {
+    repoName = 'android' // 远程仓库名字,不指明，默认是上传到maven
+    userOrg = 'mosect' // bintray.com用户名
+    groupId = 'com.mosect' // jcenter上的路径,bintray上创建Package时填写的Version control项
+    artifactId = 'ViewUtils' // 项目名称，bintray上创建Package时填写的Name项
+    publishVersion = '1.0.0' // 版本号
+    desc = '视图工具库，提供了滑动辅助（ScrollHelper）、测量工具（MeasureUtils）、拦截辅助器（InterceptTouchHelper）、手势辅助器（GestureHelper）' // 描述，不重要
+    website = 'http://www.mosect.com' // 网站，最好有，不重要
+}
+
+android {
+    compileSdkVersion 28
+
+
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
