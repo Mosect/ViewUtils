@@ -2,7 +2,7 @@
 视图工具类，提供了三个视图辅助器：
 * GestureHelper（手势辅助器）
 * InterceptTouchHelper（拦截辅助器）
-* ScrollHelper（滑动辅助器）
+* ScrollHelper（滑动辅助器）  
 
 此外，还提供了测量工具：
 * MeasureUtils
@@ -32,8 +32,8 @@ compile 'com.mosect:ViewUtils:1.0.1'
 ```
 <dependency>
   <groupId>com.mosect</groupId>
-  <artifactId>LoopPager</artifactId>
-  <version>1.0.2</version>
+  <artifactId>ViewUtils</artifactId>
+  <version>1.0.1</version>
   <type>pom</type>
 </dependency>
 ```
