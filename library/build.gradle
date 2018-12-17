@@ -6,8 +6,8 @@ publish {
     userOrg = 'mosect' // bintray.com用户名
     groupId = 'com.mosect' // jcenter上的路径,bintray上创建Package时填写的Version control项
     artifactId = 'ViewUtils' // 项目名称，bintray上创建Package时填写的Name项
-    publishVersion = '1.0.0' // 版本号
-    desc = '视图工具库，提供了滑动辅助（ScrollHelper）、测量工具（MeasureUtils）、拦截辅助器（InterceptTouchHelper）、手势辅助器（GestureHelper）' // 描述，不重要
+    publishVersion = '1.0.1' // 版本号
+    desc = '在ScrollHelper中，增加setStartPosition方法' // 描述，不重要
     website = 'http://www.mosect.com' // 网站，最好有，不重要
 }
 
@@ -33,6 +33,10 @@ android {
         }
     }
 
+}
+
+tasks.withType(Javadoc).all {
+    enabled = false
 }
 
 dependencies {

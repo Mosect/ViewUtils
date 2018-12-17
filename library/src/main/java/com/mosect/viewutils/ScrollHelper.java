@@ -37,10 +37,7 @@ public abstract class ScrollHelper {
         velocityTracker.addMovement(event);
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN: {
-                startTouchX = event.getX();
-                startTouchY = event.getY();
-                startScrollX = getViewScrollX();
-                startScrollY = getViewScrollY();
+                setStartPosition(event.getX(), event.getY());
                 break;
             }
 
@@ -82,6 +79,19 @@ public abstract class ScrollHelper {
                 break;
             }
         }
+    }
+
+    /**
+     * 设置起始位置，一般是ACTION_DOWN的时候执行，如果有特殊要求，可以在外部主动调用，更改起始位置
+     *
+     * @param x 位置X
+     * @param y 位置Y
+     */
+    public void setStartPosition(float x, float y) {
+        startTouchX = x;
+        startTouchY = y;
+        startScrollX = getViewScrollX();
+        startScrollY = getViewScrollY();
     }
 
     /**
