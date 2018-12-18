@@ -108,7 +108,7 @@ public class GestureHelper {
      * @param event 事件
      */
     public void onTouchEvent(MotionEvent event) {
-        System.out.println("onTouchEvent:action=" + event.getAction());
+//        System.out.println("onTouchEvent:action=" + event.getAction());
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN: // 按下
                 touchDown(event);
@@ -121,7 +121,7 @@ public class GestureHelper {
                 touchFinish(event);
                 break;
         }
-        System.out.println("onTouchEvent:" + gesture);
+//        System.out.println("onTouchEvent:" + gesture);
     }
 
     /**
@@ -161,8 +161,8 @@ public class GestureHelper {
     private void touchMove(MotionEvent event) {
         float rangeX = event.getX() - downX;
         float rangeY = event.getY() - downY;
-        System.out.println(String.format("touchMove:rangeX=%f,rangeY=%f,pointSize=%f",
-                rangeX, rangeY, pointSize));
+//        System.out.println(String.format("touchMove:rangeX=%f,rangeY=%f,pointSize=%f",
+//                rangeX, rangeY, pointSize));
         if (gesture == GESTURE_NONE || gesture == GESTURE_PRESSED) { // 未确定手势或正在长按
             if (Math.abs(rangeX) > pointSize || Math.abs(rangeY) > pointSize) {
                 // 超出点的范围，不算点击、按住手势，应该是滑动手势

@@ -42,7 +42,7 @@ public abstract class ScrollHelper {
             }
 
             case MotionEvent.ACTION_MOVE: {
-                if (gestureHelper.isVerticalGesture() || gestureHelper.isHorizontalGesture() && canScroll()) {
+                if (canScroll()) {
                     float rangeX = event.getX() - startTouchX;
                     float rangeY = event.getY() - startTouchY;
                     int dstX = (int) (startScrollX - rangeX);
@@ -111,7 +111,7 @@ public abstract class ScrollHelper {
      * @return 是否可以滑动
      */
     protected boolean canScroll() {
-        return true;
+        return gestureHelper.isVerticalGesture() || gestureHelper.isHorizontalGesture();
     }
 
     /**

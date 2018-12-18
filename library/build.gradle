@@ -6,8 +6,8 @@ publish {
     userOrg = 'mosect' // bintray.com用户名
     groupId = 'com.mosect' // jcenter上的路径,bintray上创建Package时填写的Version control项
     artifactId = 'ViewUtils' // 项目名称，bintray上创建Package时填写的Name项
-    publishVersion = '1.0.2' // 版本号
-    desc = '在ScrollHelper中，增加canScroll、getGestureHelper方法' // 描述，不重要
+    publishVersion = '1.0.4' // 版本号
+    desc = '删除不必要打印' // 描述，不重要
     website = 'http://www.mosect.com' // 网站，最好有，不重要
 }
 

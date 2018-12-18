@@ -52,6 +52,13 @@ public class FreeScroll extends FrameLayout {
 
         scrollHelper = new ViewScrollHelper(this) {
             @Override
+            protected boolean canScroll() {
+                boolean result = getGestureHelper().isVerticalGesture();
+                System.out.println("canScroll:" + result);
+                return result;
+            }
+
+            @Override
             protected int getViewHorizontallyScrollSize() {
                 return computeHorizontalScrollRange() - computeHorizontalScrollExtent();
             }
