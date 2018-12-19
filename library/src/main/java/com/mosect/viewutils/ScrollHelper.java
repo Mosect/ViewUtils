@@ -47,20 +47,20 @@ public abstract class ScrollHelper {
                     float rangeY = event.getY() - startTouchY;
                     int dstX = (int) (startScrollX - rangeX);
                     int dstY = (int) (startScrollY - rangeY);
-                    if (dstX < 0) {
+                    if (dstX < getMinHorizontallyScroll()) {
                         dstX = 0;
                         startTouchX = event.getX();
                         startScrollX = dstX;
-                    } else if (dstX > getViewHorizontallyScrollSize()) {
+                    } else if (dstX > getMaxHorizontallyScroll()) {
                         dstX = getViewHorizontallyScrollSize();
                         startTouchX = event.getX();
                         startScrollX = dstX;
                     }
-                    if (dstY < 0) {
+                    if (dstY < getMinVerticallyScroll()) {
                         dstY = 0;
                         startTouchY = event.getY();
                         startScrollY = dstY;
-                    } else if (dstY > getViewVerticallyScrollSize()) {
+                    } else if (dstY > getMaxVerticallyScroll()) {
                         dstY = getViewVerticallyScrollSize();
                         startTouchY = event.getY();
                         startScrollY = dstY;
@@ -112,6 +112,42 @@ public abstract class ScrollHelper {
      */
     protected boolean canScroll() {
         return gestureHelper.isVerticalGesture() || gestureHelper.isHorizontalGesture();
+    }
+
+    /**
+     * 获取水平方向最小的滑动位置
+     *
+     * @return 水平方向最小的滑动位置
+     */
+    public int getMinHorizontallyScroll() {
+        return 0;
+    }
+
+    /**
+     * 获取水平方向最大的滑动位置
+     *
+     * @return 水平方向最大的滑动位置
+     */
+    public int getMaxHorizontallyScroll() {
+        return getViewHorizontallyScrollSize();
+    }
+
+    /**
+     * 获取垂直方向最小的滑动位置
+     *
+     * @return 垂直方向最小的滑动位置
+     */
+    public int getMinVerticallyScroll() {
+        return 0;
+    }
+
+    /**
+     * 获取垂直方向最大的滑动位置
+     *
+     * @return 垂直方向最大的滑动位置
+     */
+    public int getMaxVerticallyScroll() {
+        return getViewVerticallyScrollSize();
     }
 
     /**
