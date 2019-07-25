@@ -10,11 +10,11 @@
 ## 使用
 ### Gradle
 ```
-implementation 'com.mosect:ViewUtils:1.0.4'
+implementation 'com.mosect:ViewUtils:1.0.6'
 ```
 如果Gradle版本比较旧
 ```
-compile 'com.mosect:ViewUtils:1.0.4'
+compile 'com.mosect:ViewUtils:1.0.6'
 ```
 
 ### Maven
@@ -22,7 +22,7 @@ compile 'com.mosect:ViewUtils:1.0.4'
 <dependency>
   <groupId>com.mosect</groupId>
   <artifactId>ViewUtils</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.6</version>
   <type>pom</type>
 </dependency>
 ```
@@ -251,14 +251,19 @@ public static void computeLayout(View view, int layoutX, int layoutY, Rect layou
 更多具体使用方法，可以查看示例。  
 
 # 更新记录
-## 1.0.0
-### 问题
-* ScrollHelper没有提供手势帮助器，已在1.0.2版本提供（getGestureHelper）
-* ScrollHelper没有提供根据实际情况决定是否滑动的方法，已在1.0.2版本提供（canScroll）
+## 1.0.6
+### 更改：
+* 修复在视图位置不固定的情况下，获取的手势不正确的问题
 
-## 1.0.1
+## 1.0.4
+### 更改
+* 删除不必要打印信息
 ### 问题
-* 优化了一些问题
+* 在视图位置不固定的情况下，获取的手势不正确，已在V1.0.6中修复
+
+## 1.0.3
+### 修复
+* 修复ScrollHelper中canScroll判断不正确问题，并添加默认的判断规则
 
 ## 1.0.2
 ### 更改
@@ -267,13 +272,14 @@ public static void computeLayout(View view, int layoutX, int layoutY, Rect layou
 ### 问题
 * ScrollHelper中，canScroll方法判断不正确问题，已在1.0.3中修复
 
-## 1.0.3
-### 修复
-* 修复ScrollHelper中canScroll判断不正确问题，并添加默认的判断规则
+## 1.0.0
+### 问题
+* ScrollHelper没有提供手势帮助器，已在1.0.2版本提供（getGestureHelper）
+* ScrollHelper没有提供根据实际情况决定是否滑动的方法，已在1.0.2版本提供（canScroll）
 
-## 1.0.4
-### 更改
-* 删除不必要打印信息
+## 1.0.1
+### 问题
+* 优化了一些问题
 
 # 联系方式
 ```

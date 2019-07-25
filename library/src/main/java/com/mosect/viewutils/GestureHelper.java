@@ -153,21 +153,21 @@ public class GestureHelper {
 
     private void touchDown(MotionEvent event) {
         downTime = System.currentTimeMillis();
-        downX = preX = event.getX();
-        downY = preY = event.getY();
+        downX = preX = event.getRawX();
+        downY = preY = event.getRawY();
         gesture = GESTURE_PRESSED;
     }
 
     private void touchMove(MotionEvent event) {
-        float rangeX = event.getX() - downX;
-        float rangeY = event.getY() - downY;
+        float rangeX = event.getRawX() - downX;
+        float rangeY = event.getRawY() - downY;
 //        System.out.println(String.format("touchMove:rangeX=%f,rangeY=%f,pointSize=%f",
 //                rangeX, rangeY, pointSize));
         if (gesture == GESTURE_NONE || gesture == GESTURE_PRESSED) { // 未确定手势或正在长按
             if (Math.abs(rangeX) > pointSize || Math.abs(rangeY) > pointSize) {
                 // 超出点的范围，不算点击、按住手势，应该是滑动手势
-                float ox = event.getX() - preX;
-                float oy = event.getY() - preY;
+                float ox = event.getRawX() - preX;
+                float oy = event.getRawY() - preY;
                 if (Math.abs(ox) > xyScale * Math.abs(oy)) {
                     // 水平方向滑动
                     if (ox < 0) {
@@ -192,8 +192,8 @@ public class GestureHelper {
                 gesture = GESTURE_LONG_CLICK;
             }
         }
-        preX = event.getX();
-        preY = event.getY();
+        preX = event.getRawX();
+        preY = event.getRawY();
     }
 
     private void touchFinish(MotionEvent event) {
