@@ -9,22 +9,17 @@
 
 ## 使用
 ### Gradle
+在项目根节点的build.gradle中配置：
 ```
-implementation 'com.mosect:ViewUtils:1.0.6'
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
 ```
-如果Gradle版本比较旧
+在需要引入的项目build.gradle中添加
 ```
-compile 'com.mosect:ViewUtils:1.0.6'
-```
-
-### Maven
-```
-<dependency>
-  <groupId>com.mosect</groupId>
-  <artifactId>ViewUtils</artifactId>
-  <version>1.0.6</version>
-  <type>pom</type>
-</dependency>
+implementation 'com.github.mosect:ViewUtils:1.0.8'
 ```
 
 ## GestureHelper
@@ -283,7 +278,5 @@ public static void computeLayout(View view, int layoutX, int layoutY, Rect layou
 
 # 联系方式
 ```
-QQ：905340954
 Email：zhouliuyang1995@163.com
-个人网站：http://www.mosect.com:5207  （建设中）  
 ```
