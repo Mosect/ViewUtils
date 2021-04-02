@@ -8,6 +8,8 @@
 * MeasureUtils
 
 ## 使用
+[![](https://jitpack.io/v/Mosect/ViewUtils.svg)](https://jitpack.io/#Mosect/ViewUtils)
+
 ### Gradle
 在项目根节点的build.gradle中配置：
 ```
@@ -19,7 +21,7 @@ allprojects {
 ```
 在需要引入的项目build.gradle中添加
 ```
-implementation 'com.github.mosect:ViewUtils:1.0.8'
+implementation 'com.github.Mosect:ViewUtils:1.0.8'
 ```
 
 ## GestureHelper
